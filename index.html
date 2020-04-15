@@ -4,15 +4,176 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Snippet Library</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
   </head>
   <body>
     <h1>Form Snippet Library</h1>
 
+    <a href="https://learn-the-web.algonquindesign.ca/topics/forms-cheat-sheet/" target="_blank"> <h2>Form Cheatsheet</h2> </a>
+
+    <h2>Inputs and labels</h2>
+
+    <form action="thanks.html" method="post">
+      <!-- Labels are associated with inputs using the for and id attributes -->
+      <label for="name">Name</label>
+      <input id="name" />
+    </form>
+
+    <h2>Text inputs</h2>
+
+    <h3>Some examples:</h3>
+
+    <!-- type="text" is the default for all elements and can be left off -->
+    <label for="text">Text area</label>
+    <input type="text" id="text" />
+
+    <label for="email">E-mail address</label>
+    <input type="email" id="email" />
+
+    <label for="homepage">Homepage</label>
+    <input type="url" id="homepage" />
+
+    <h2>Colour picker</h2>
+
+    <label for="fav-color">Favourite colour</label>
+    <input type="color" id="fav-color" />
+    <br />
+
+    <h2>Numbers</h2>
+
+    <!--
+  Would allow any number between 0 and 1, in increments of 0.1
+  e.g. 0, 0.1, 0.2, 0.3 ... 0.9, 1.0
+-->
+    <input type="number" min="0" max="1" step="0.1" />
+
+    <h2>Placeholders</h2>
+    <h3>The placeholder attribute can be used to put example text into an element—but should never be used as a replacement for the label.</h3>
+
+    <input type="url" placeholder="http://example.com" />
+
+    <h1>Textareas</h1>
+    <h3>An alternative to "input type="text" " that allows multiple lines and longer text.</h3>
+
+    <h3>examples</h3>
+
+    <label for="message">Message</label>
+    <textarea id="message"></textarea>
+
+    <h1>Select boxes</h1>
+
+    <h3>Select boxes, aka dropdown boxes, allow a user to pick one option of many.</h3>
+
+    <label for="province">Province</label>
+    <select id="province">
+      <option>Manitoba</option>
+      <option>Ontario</option>
+      <option>Quebec</option>
+    </select>
+
+    <h3>Options elements can be grouped together using the <optgroup> tag. The label="…" attribute is used to show a non-selectable heading for the group.</optgroup></h3>
+    <label for="province">Province or State</label>
+    <select id="province">
+      <optgroup label="Canada">
+        <option>Ontario</option>
+        <option>Québec</option>
+      </optgroup>
+      <optgroup label="United States">
+        <option>New York</option>
+        <option>California</option>
+      </optgroup>
+    </select>
+
+    <h1>Checkboxes</h1>
+    <h3>Checkboxes allow a selection of multiple items out of a few possiblities.</h3>
+
+    <input type="checkbox" id="apato" />
+    <label for="apato">Apatosaurus</label>
+
+    <h3>In checkboxes (and radio buttons) it’s most common to have the label come after the input element. If you want the checkbox to be checked by default use the checked attribute. This applies to radio buttons too.</h3>
+    <input type="checkbox" id="apato" checked />
+    <label for="apato">Apatosaurus</label>
+
+    <h1>Radio buttons</h1>
+    <h3>Radio buttons allow users to select a single option out of many, similar to a select box.</h3>
+    <fieldset>
+      <legend>What’s your favourite colour?</legend>
+
+      <input type="radio" id="green" name="fav-color" />
+      <label for="green">Green</label>
+
+      <input type="radio" id="light-green" name="fav-color" />
+      <label for="light-green">Light Green</label>
+
+      <input type="radio" id="dark-green" name="fav-color" />
+      <label for="dark-green">Dark Green</label>
+    </fieldset>
+
+    <h3>The way to group a bunch of radio buttons together, so they work as a single group is to give them all the same name, like name="fav-color".</h3>
+
+    <h1>Fieldsets</h1>
+    <h3>
+      Above, we’re using the "fieldset" element to group radio buttons together semantically.<br />
+      The fieldset can be used to group any inputs together in a form that logically belong together.<br />
+      Groups of radio buttons and checkboxes should always be surrounded by fieldsets. Here’s an example of grouping address inputs together:
+    </h3>
+
+    <fieldset>
+      <legend>Mailing Address</legend>
+
+      <div>
+        <label for="street-address">Street Address</label>
+        <input id="street-address" />
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input id="city" />
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <input id="country" />
+      </div>
+      <div>
+        <label for="postal-code">Postal Code</label>
+        <input id="postal-code" />
+      </div>
+    </fieldset>
+
+    <h1>Buttons</h1>
+    <h3>All forms need to have buttons otherwise the form’s information can’t be sent.</h3>
+    <form>
+      <button type="submit">Send</button>
+    </form>
+
+    <h3>Most often the button’s type should be set to “submit”. But if you don’t want it to submit the form and control the button with JavaScript, leave the type attribute off</h3>
+
+    <h1>Making forms functional</h1>
+    <h3>There’s a few small things to can to to make our forms slightly more functional without a backend server.</h3>
+
+    <h1>Required</h1>
+    <h3>The required attribute can be added to fields to force the user to type something into the field. If the field type is something specific like email it will enforce a properly formatted email address.</h3>
+
+    <label for="email">E-mail address</label>
+    <input type="email" id="email" required />
+
+    <h1>Lengths</h1>
+    <h3>As seen above we can control the max and min for numbers—we can do something similar for text fields with the maxlength and minlength attributes.</h3>
+
+    <label for="password">Password</label>
+    <input type="password" minlength="6" id="password" />
+
+    <h1>Pattern</h1>
+    <h3>The pattern attribute can be used to restrict the format of the text entered into a field. It uses regular expressions.</h3>
+
+    <label for="postalcode">Postal code</label>
+    <input type="text" pattern="[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]" id="postalcode" />
+
+    <h1>Form submission without a server</h1>
+    <h3>
+      If you’re creating a static website, without wanting to have to write backend PHP, etc. to make your website function, there’s a few great services you can use. These services work in a fashion similar to this: You create a form, that points to their service. The user submits the form. The
+      data is sent to the service’s website. The service composes an email and sends it to you. The service redirects the user back to your website to display a message. The services work really well for simple information collection, but aren’t great for complex registration forms, etc.
+    </h3>
     <!-- if you need to show copy-pastable code, you can use the following-->
     <!--<pre><code class="language-html"><input type=""></code></pre>-->
   </body>
