@@ -1,0 +1,153 @@
+/* @import url(https://fonts.googleapis.com/css?family=Raleway:400,500); */
+
+html,
+body {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #db38b2, #75f1be, #d6e7b1);
+  text-align: center;
+  font-family: Helvetica;
+  min-width: 320px;
+}
+
+::selection {
+  color: #0400ff;
+}
+
+#title {
+  color: black;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+header {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#form-outer {
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  border-radius: 30px;
+  width: 75%;
+  max-width: 900px;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.labels {
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+  vertical-align: middle;
+}
+
+.input-field {
+  height: 20px;
+  width: 280px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #004d7a;
+  border-radius: 10px;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+#userAge {
+  width: 40px;
+}
+
+.userRatings,
+input[type="checkbox"] {
+  float: left;
+  margin-right: 5px;
+}
+
+#submit {
+  background-color: #004d7a;
+  border-radius: 40px;
+  color: white;
+  font-size: 1em;
+  height: 40px;
+  width: 15rem;
+  margin: 10px;
+  border: 0px solid;
+}
+
+#submit:hover {
+  background-color: lime;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+
+.radio,
+.checkbox {
+  position: relative;
+  left: -43px;
+  margin-left: 10px;
+  display: block;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 833px) {
+  .input-field {
+    width: 80%;
+  }
+
+  select {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .labels {
+    width: 100%;
+    text-align: left;
+  }
+
+  .rightTab {
+    width: 80%;
+    float: left;
+  }
+
+  .input-field {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+.arrowback img {
+  width: 10%;
+  margin-bottom: 50px;
+  float: left;
+}
+
+.arrowback img:hover {
+  transform: scale(0.8);
+  cursor: pointer;
+}
